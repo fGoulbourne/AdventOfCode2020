@@ -46,16 +46,11 @@ public class Ch6 {
     while(br.ready()) {
 
       line = br.readLine();
-      if(line != null && line.length() != 0) {
+      if(line != null && line.length() != 0){
         for (int i = 0; i < line.length(); i++) {
           questionsOne.add(line.charAt(i));
         }
-        for(int j = 0; j < 26; j++) {
-          ch = (char)('a' + j);
-          if (!questionsOne.contains(ch)) {
-            questionsAll.remove(ch);
-          }
-        }
+        questionsAll.retainAll(questionsOne);
         questionsOne = new HashSet<>();
       } else {
         qSum += questionsAll.size();
