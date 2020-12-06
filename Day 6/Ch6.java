@@ -37,7 +37,6 @@ public class Ch6 {
     HashSet<Character> questionsOne = new HashSet<>();
     HashSet<Character> questionsAll = new HashSet<>();
     String line;
-    char ch;
     int qSum = 0;
     for(int i = 0; i < 26; i++) {
       questionsAll.add((char)('a' + i));
@@ -46,7 +45,7 @@ public class Ch6 {
     while(br.ready()) {
 
       line = br.readLine();
-      if(line != null && line.length() != 0){
+      if(line != null && line.length() != 0) {
         for (int i = 0; i < line.length(); i++) {
           questionsOne.add(line.charAt(i));
         }
