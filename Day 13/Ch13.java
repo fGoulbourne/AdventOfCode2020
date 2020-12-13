@@ -7,12 +7,14 @@ import java.util.Set;
 public class Ch13 {
 
   public static void main(String[] args) throws Exception {
-    BufferedReader br = new BufferedReader(new FileReader("in.txt"));
+    BufferedReader br = new BufferedReader(new FileReader("in1.txt"));
     int bus;
     String[] line;
     ArrayList<Integer> times = new ArrayList<>();
     int min = 999;
     int busNum = 0;
+
+
 
     bus = Integer.parseInt(br.readLine());
     line = br.readLine().split(",");
@@ -39,7 +41,7 @@ public class Ch13 {
         values.add(new Bus(times.get(i), i));
       }
     }
-
+    System.out.println(lowComDen(values));
     long multi = 1;
     long firstVal = 1;
     ArrayList<Bus> concBus = new ArrayList<>();
@@ -73,7 +75,7 @@ public class Ch13 {
     long multi = 1;
     set = primes.keySet();
     for (Integer j : set) {
-      multi *= (j * primes.get(j));
+      multi *= (Math.pow(j, primes.get(j)));
     }
     return multi;
   }
